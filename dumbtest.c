@@ -15,10 +15,17 @@ int main(){
 	   printf("Enter 1 for pass, 2 for fail: ");
 	   scanf("%d", &result);
 	
-      	   if (result == 1){
-	      pass_count = pass_count + 1;}
-	   else
+      	   if (result != 1){
+	      if (result != 2)
+	         --student;
+	   }
+
+	   if (result == 1)
+	      pass_count = pass_count + 1;
+	   
+	   if (result == 2)
 	      fail_count = fail_count + 1;
+
 	   student = student + 1;
 	}
 
