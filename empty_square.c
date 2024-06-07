@@ -13,17 +13,23 @@
  *       while counter is less than or equal to size
  *          print *
  *          increment counter
+ *       print new space
  *    if row is equal to 1 (last row)
  *       while counter is less than or equal to size
  *          print *
  *          increment counter
+ *       print new space
  *    else
- *       while counter is less than or equal to row - 2
- *          if counter is equal to one 
- *          print " "  
+ *       while counter is less than or equal to size - 2
+ *          set counter to one
+ *          print *
+ *             while counter is less than or equal to size - 2
+ *                print " "
+ *                increment counter
+ *          print * and new space  
  *
  *
- *    print new space
+ *   
  *
  *    decrement row
  *
@@ -43,13 +49,37 @@ int main(){
 
    while (row >= 1){
       count = 1;  
-      
-      while (count <= size){
-         printf("*");
-	 ++count;
+     
+      if (row == size){
+         while (count <= size){
+	    printf("*");
+	    ++count;
+	 }
+	 printf("\n");
       }
 
-      printf("\n");
+/* May want to fix extra space under input of size 1 */	
+
+      if (row == 1){
+	 while (count <= size){
+	    printf("*");
+	    ++count;
+	 }
+	 printf("\n");
+      }
+
+      else{
+	 count = 1;
+	 while (count <= size - 2){
+	    printf("*");
+	    while (count <= size - 2){
+	       printf(" ");
+	       ++count;
+	    }
+	    printf("*\n");
+         }
+      }
+	
       --row;
       
 }
